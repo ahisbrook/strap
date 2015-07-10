@@ -1,7 +1,7 @@
 require 'sinatra'
 
 lib_path = File.expand_path('../lib', __FILE__)
-require "#{lib_path}/message"
+require "#{lib_path}/message_generator"
 
 class MyThing < Sinatra::Base
   set :show_exceptions, true
@@ -17,7 +17,7 @@ class MyThing < Sinatra::Base
   post '/' do
     message = MessageGenerator.new.generate(params["typeSomething"])
     erb :index, :locals => {
-      :message_visibility => 'hidden',
+      :message_visibility => 'visible',
       :message => message
     }
   end
