@@ -7,4 +7,5 @@ gem 'sinatra'
 group :test do
   gem 'pry'
   gem 'rspec', '2.14.1'
+  gem 'rake'
 end
